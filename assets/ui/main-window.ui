@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="janela_principal">
+    <property name="title">Fydelis Video Editor</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
+    <child>
+      <object class="GtkBox" id="conteudo_principal">
+        <property name="orientation">vertical</property>
+        <property name="spacing">0</property>
+
+        <!-- 📋 BARRA DE MENU -->
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">16</property>
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
+            <property name="margin-top">4</property>
+            <property name="margin-bottom">4</property>
+            <property name="css-classes">menubar-bg</property>
+            <child>
+              <object class="GtkMenuButton">
+                <property name="label">_Arquivo</property>
+                <property name="use-underline">True</property>
+                <child>
+                  <object class="GtkPopoverMenu">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">2</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Novo Projeto</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.novo</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Abrir Projeto...</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.abrir</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Salvar</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.salvar</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">Salvar _Como...</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.salvar_como</property>
+                          </object>
+                        </child>
+                        <child><object class="GtkSeparator"/></child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Importar Mídia...</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.importar</property>
+                          </object>
+                        </child>
+                        <child><object class="GtkSeparator"/></child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Exportar Vídeo...</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.exportar</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton">
+                <property name="label">_Editar</property>
+                <property name="use-underline">True</property>
+                <child>
+                  <object class="GtkPopoverMenu">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">2</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Desfazer</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.desfazer</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Refazer</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.refazer</property>
+                          </object>
+                        </child>
+                        <child><object class="GtkSeparator"/></child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Dividir Clipe</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.dividir</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Remover</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.remover</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton">
+                <property name="label">_Visualizar</property>
+                <property name="use-underline">True</property>
+                <child>
+                  <object class="GtkPopoverMenu">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">2</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Reproduzir / Pausar</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.reproduzir</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Parar</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.parar</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton">
+                <property name="label">_IA</property>
+                <property name="use-underline">True</property>
+                <child>
+                  <object class="GtkPopoverMenu">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">2</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">Gerar _Legendas Automáticas</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.gerar_legendas</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Remover Ruído do Áudio</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.remover_ruido</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Melhorar Qualidade de Imagem</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.melhorar_imagem</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton">
+                <property name="label">_Ajuda</property>
+                <property name="use-underline">True</property>
+                <child>
+                  <object class="GtkPopoverMenu">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">2</property>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label">_Sobre o Fydelis</property>
+                            <property name="use-underline">True</property>
+                            <property name="action-name">win.sobre</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="hexpand">True</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <!-- 🔧 TOOLBAR -->
+        <child>
+          <object class="GtkBox" id="toolbar">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">4</property>
+            <property name="margin-start">8</property>
+            <property name="margin-end">8</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">6</property>
+            <property name="css-classes">toolbar-bg</property>
+            <child>
+              <object class="GtkButton" id="tb_novo">
+                <property name="icon-name">document-new</property>
+                <property name="tooltip-text">Novo Projeto</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_abrir">
+                <property name="icon-name">document-open</property>
+                <property name="tooltip-text">Abrir Projeto</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_salvar">
+                <property name="icon-name">document-save</property>
+                <property name="tooltip-text">Salvar</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkButton" id="tb_importar">
+                <property name="label">Importar</property>
+                <style><class name="suggested-action"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkButton" id="tb_play">
+                <property name="icon-name">media-playback-start</property>
+                <property name="tooltip-text">Reproduzir (Espaço)</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_stop">
+                <property name="icon-name">media-playback-stop</property>
+                <property name="tooltip-text">Parar</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkButton" id="tb_cortar">
+                <property name="icon-name">edit-cut</property>
+                <property name="tooltip-text">Dividir Clipe</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_apagar">
+                <property name="icon-name">edit-delete</property>
+                <property name="tooltip-text">Remover</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkButton" id="tb_zoom_menos">
+                <property name="icon-name">zoom-out</property>
+                <property name="tooltip-text">Diminuir Zoom</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_zoom_mais">
+                <property name="icon-name">zoom-in</property>
+                <property name="tooltip-text">Aumentar Zoom</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="tb_ajustar">
+                <property name="icon-name">zoom-fit-best</property>
+                <property name="tooltip-text">Ajustar Tudo</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkBox">
+                <property name="hexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkToggleButton" id="tb_painel_ia">
+                <property name="icon-name">brain</property>
+                <property name="label">IA</property>
+                <property name="active">True</property>
+                <property name="tooltip-text">Mostrar/Esconder Painel de IA</property>
+                <style><class name="flat"/></style>
+              </object>
+            </child>
+            <child><object class="GtkSeparator"/></child>
+            <child>
+              <object class="GtkButton" id="tb_exportar">
+                <property name="label">Exportar</property>
+                <style><class name="suggested-action"/></style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child><object class="GtkSeparator"/></child>
+
+        <!-- 📂 Área de Conteúdo -->
+        <child>
+          <object class="GtkPaned" id="paned_principal">
+            <property name="position">280</property>
+            <property name="vexpand">True</property>
+
+            <!-- Esquerda: Biblioteca -->
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">10</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-top">12</property>
+                <property name="margin-bottom">12</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">&lt;b&gt;📁 Biblioteca de Mídia&lt;/b&gt;</property>
+                    <property name="use-markup">True</property>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="btn_adicionar">
+                    <property name="label">+ Adicionar Arquivos</property>
+                    <property name="halign">start</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkScrolledWindow">
+                    <property name="vexpand">True</property>
+                    <property name="margin-top">8</property>
+                    <child>
+                      <object class="GtkListBox" id="lista_midia"/>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <!-- Centro + Direita -->
+            <child>
+              <object class="GtkPaned" id="paned_direito">
+                <property name="position">780</property>
+
+                <!-- Centro: Pré-visualização + Linha do Tempo -->
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+
+                    <!-- 🎬 ÁREA DE PRÉ-VISUALIZAÇÃO -->
+                    <child>
+                      <object class="GtkFrame">
+                        <style>
+                          <class name="preview-frame"/>
+                        </style>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">10</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-end">16</property>
+                            <property name="margin-top">16</property>
+                            <property name="margin-bottom">16</property>
+
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">&lt;b&gt;🎬 Pré-visualização&lt;/b&gt;</property>
+                                <property name="use-markup">True</property>
+                                <property name="halign">start</property>
+                                <style>
+                                  <class name="section-title"/>
+                                </style>
+                              </object>
+                            </child>
+
+                            <!-- Tela do vídeo -->
+                            <child>
+                              <object class="GtkDrawingArea" id="preview_video">
+                                <property name="hexpand">True</property>
+                                <property name="height-request">240</property>
+                                <style>
+                                  <class name="preview-canvas"/>
+                                </style>
+                              </object>
+                            </child>
+
+                            <!-- Barra de tempo -->
+                            <child>
+                              <object class="GtkBox">
+                                <property name="spacing">12</property>
+                                <child>
+                                  <object class="GtkLabel" id="time_current">
+                                    <property name="label">00:00:00</property>
+                                    <style>
+                                      <class name="time-label"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkScale">
+                                    <property name="hexpand">True</property>
+                                    <property name="draw-value">False</property>
+                                    <property name="adjustment">
+                                      <object class="GtkAdjustment">
+                                        <property name="lower">0</property>
+                                        <property name="upper">100</property>
+                                        <property name="step-increment">1</property>
+                                      </object>
+                                    </property>
+                                    <style>
+                                      <class name="timeline-slider"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="time_total">
+                                    <property name="label">00:00:00</property>
+                                    <style>
+                                      <class name="time-label"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+
+                            <!-- Controles de reprodução -->
+                            <child>
+                              <object class="GtkBox">
+                                <property name="spacing">8</property>
+                                <property name="halign">center</property>
+                                <property name="margin-top">4</property>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="icon-name">media-skip-backward</property>
+                                    <property name="tooltip-text">Ir para o início</property>
+                                    <style>
+                                      <class name="control-btn"/>
+                                      <class name="flat"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="btn_play_center">
+                                    <property name="icon-name">media-playback-start</property>
+                                    <property name="tooltip-text">Reproduzir / Pausar</property>
+                                    <style>
+                                      <class name="play-btn"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="icon-name">media-skip-forward</property>
+                                    <property name="tooltip-text">Ir para o fim</property>
+                                    <style>
+                                      <class name="control-btn"/>
+                                      <class name="flat"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- ⏱️ LINHA DO TEMPO -->
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">&lt;b&gt;⏱️ Linha do Tempo&lt;/b&gt;</property>
+                        <property name="use-markup">True</property>
+                        <property name="halign">start</property>
+                        <style>
+                          <class name="section-title"/>
+                        </style>
+                      </object>
+                    </child>
+
+                    <!-- Régua de Tempo -->
+                    <child>
+                      <object class="GtkDrawingArea" id="timeline_ruler">
+                        <property name="height-request">30</property>
+                        <style>
+                          <class name="timeline-ruler"/>
+                        </style>
+                      </object>
+                    </child>
+
+                    <!-- Área de Trilhas -->
+                    <child>
+                      <object class="GtkScrolledWindow">
+                        <property name="vexpand">True</property>
+                        <property name="hexpand">True</property>
+                        <property name="child">
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">2</property>
+                            <style>
+                              <class name="timeline-tracks-container"/>
+                            </style>
+
+                            <!-- Trilha de Vídeo -->
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">8</property>
+                                <property name="margin-start">4</property>
+                                <property name="margin-end">4</property>
+                                <property name="margin-top">4</property>
+                                <property name="margin-bottom">4</property>
+                                <style>
+                                  <class name="track-row"/>
+                                </style>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label">🎬 Vídeo</property>
+                                    <property name="width-chars">10</property>
+                                    <property name="xalign">0.5</property>
+                                    <style>
+                                      <class name="track-label"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkDrawingArea" id="track_video">
+                                    <property name="hexpand">True</property>
+                                    <property name="height-request">60</property>
+                                    <style>
+                                      <class name="track-area"/>
+                                      <class name="track-video"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+
+                            <!-- Trilha de Áudio -->
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">8</property>
+                                <property name="margin-start">4</property>
+                                <property name="margin-end">4</property>
+                                <property name="margin-top">4</property>
+                                <property name="margin-bottom">4</property>
+                                <style>
+                                  <class name="track-row"/>
+                                </style>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label">🎵 Áudio</property>
+                                    <property name="width-chars">10</property>
+                                    <property name="xalign">0.5</property>
+                                    <style>
+                                      <class name="track-label"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkDrawingArea" id="track_audio">
+                                    <property name="hexpand">True</property>
+                                    <property name="height-request">60</property>
+                                    <style>
+                                      <class name="track-area"/>
+                                      <class name="track-audio"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+
+                            <!-- Trilha de Legendas -->
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">horizontal</property>
+                                <property name="spacing">8</property>
+                                <property name="margin-start">4</property>
+                                <property name="margin-end">4</property>
+                                <property name="margin-top">4</property>
+                                <property name="margin-bottom">4</property>
+                                <style>
+                                  <class name="track-row"/>
+                                </style>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label">📝 Legendas</property>
+                                    <property name="width-chars">10</property>
+                                    <property name="xalign">0.5</property>
+                                    <style>
+                                      <class name="track-label"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkDrawingArea" id="track_subtitle">
+                                    <property name="hexpand">True</property>
+                                    <property name="height-request">50</property>
+                                    <style>
+                                      <class name="track-area"/>
+                                      <class name="track-subtitle"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Direita: Painel IA -->
+                <child>
+                  <object class="GtkBox" id="painel_ia">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">&lt;b&gt;🧠 Inteligência Artificial&lt;/b&gt;</property>
+                        <property name="use-markup">True</property>
+                        <property name="halign">start</property>
+                      </object>
+                    </child>
+                    <child><object class="GtkSeparator"/></child>
+                    <child>
+                      <object class="GtkFrame">
+                        <property name="label">Legendas Automáticas</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="margin-start">12</property>
+                            <property name="margin-end">12</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Transcreve o áudio e gera legendas automaticamente</property>
+                                <property name="wrap">True</property>
+                                <property name="css-classes">hint-text</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="btn_legendas">
+                                <property name="label">Gerar Legendas</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkFrame">
+                        <property name="label">Limpeza de Áudio</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="margin-start">12</property>
+                            <property name="margin-end">12</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Remove ruído de fundo do áudio</property>
+                                <property name="wrap">True</property>
+                                <property name="css-classes">hint-text</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="btn_limpar_audio">
+                                <property name="label">Remover Ruído</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkFrame">
+                        <property name="label">Melhoria de Imagem</property>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="margin-start">12</property>
+                            <property name="margin-end">12</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="spacing">8</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label">Aumenta resolução e nitidez do vídeo</property>
+                                <property name="wrap">True</property>
+                                <property name="css-classes">hint-text</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="btn_melhorar_imagem">
+                                <property name="label">Melhorar Qualidade</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <!-- Barra de Status -->
+        <child>
+          <object class="GtkBox" id="barra_status">
+            <property name="orientation">horizontal</property>
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">6</property>
+            <child>
+              <object class="GtkLabel" id="status_bar">
+                <property name="label">Pronto • Fydelis Video Editor v1.0.0-ia</property>
+                <property name="halign">start</property>
+                <property name="css-classes">statusbar</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="hexpand">True</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="status_ia">
+                <property name="label">🧠 IA: Pronta</property>
+                <property name="halign">end</property>
+                <property name="css-classes">statusbar</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

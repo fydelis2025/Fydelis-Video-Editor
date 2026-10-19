@@ -1,0 +1,6 @@
+<interface>
+  <object class="GtkBox" id="library">
+    <property name="orientation">vertical</property>
+    <property name="spacing">6</property>
+  </object>
+</interface>

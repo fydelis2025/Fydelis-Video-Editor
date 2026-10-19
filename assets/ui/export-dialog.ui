@@ -1,0 +1,5 @@
+<interface>
+  <object class="GtkDialog" id="dialog">
+    <property name="title">Exportar Projeto</property>
+  </object>
+</interface>

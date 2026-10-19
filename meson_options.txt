@@ -1,0 +1,40 @@
+option('whisper',
+  type: 'boolean',
+  value: true,
+  description: 'Habilitar suporte a legendas automáticas (Whisper.cpp)'
+)
+option('rnnoise',
+  type: 'boolean',
+  value: true,
+  description: 'Habilitar redução de ruído de áudio (RNNoise)'
+)
+option('yolo',
+  type: 'boolean',
+  value: false,
+  description: 'Habilitar rastreamento de objetos (YOLOv8 + ONNX Runtime)'
+)
+option('upscale',
+  type: 'boolean',
+  value: false,
+  description: 'Habilitar melhoria de resolução (Real-ESRGAN)'
+)
+option('bg-remove',
+  type: 'boolean',
+  value: false,
+  description: 'Habilitar remoção de fundo (MODNet/SAM2)'
+)
+option('tts',
+  type: 'boolean',
+  value: false,
+  description: 'Habilitar narração por voz (Piper TTS)'
+)
+option('system-ffmpeg',
+  type: 'boolean',
+  value: true,
+  description: 'Usar FFmpeg do sistema; desativar para build próprio'
+)
+option('system-whisper',
+  type: 'boolean',
+  value: true,
+  description: 'Usar Whisper.cpp do sistema; desativar para compilar do submódulo'
+)

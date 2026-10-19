@@ -1,0 +1,343 @@
+/* Fydelis Video Editor — Tema Oficial v1.0 */
+/* Paleta: Roxo Escuro #7C3AED / Fundo #120B24 */
+
+window {
+  background: #120B24;
+  color: #E8E0F8;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 10.5pt;
+}
+
+/* Cabeçalho */
+headerbar {
+  background: linear-gradient(90deg, #2B1455, #4A1F8C);
+  color: #FFFFFF;
+  border: none;
+  min-height: 48px;
+}
+
+headerbar .title {
+  font-weight: 700;
+  font-size: 14pt;
+}
+
+headerbar .subtitle {
+  color: #C4B5F5;
+  font-size: 10pt;
+}
+
+/* Painéis e Cabeçalhos */
+.panel-heading {
+  font-weight: bold;
+  font-size: 12pt;
+  color: #C4B5F5;
+}
+
+/* Área de Pré-visualização */
+.preview-bg {
+  background: #0F0A1E;
+  border-radius: 10px;
+  border: 1px solid #3A2070;
+}
+
+/* Linha do Tempo */
+.timeline-bg {
+  background: #1A102E;
+  border-radius: 8px;
+  border: 1px solid #3A2070;
+}
+
+/* Barra de Status */
+.statusbar {
+  font-size: 10pt;
+  color: #9988CC;
+  background: #0F0A1E;
+  border-top: 1px solid #2B1455;
+  padding: 6px 12px;
+}
+
+/* Botões com Destaque */
+button.suggested-action {
+  background: #7C3AED;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: background 0.2s ease;
+}
+
+button.suggested-action:hover {
+  background: #9061F9;
+}
+
+button.suggested-action:active {
+  background: #6B21D9;
+}
+
+/* Botões de Ícone */
+button.flat {
+  background: transparent;
+  border: none;
+  color: #E8E0F8;
+  border-radius: 6px;
+}
+
+button.flat:hover {
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* Textos de Ajuda */
+.hint-text {
+  color: #9988CC;
+  font-size: 10pt;
+}
+
+/* Painéis Divisores */
+paned {
+  background: transparent;
+}
+
+paned > separator {
+  background: #3A2070;
+  min-width: 2px;
+}
+
+/* Áreas de Rolagem */
+scrolledwindow {
+  border: none;
+  background: transparent;
+}
+
+/* Listas */
+listbox {
+  background: transparent;
+}
+
+listbox row {
+  background: #1A102E;
+  border: 1px solid #2B1455;
+  border-radius: 6px;
+  margin: 4px;
+  padding: 8px 12px;
+}
+
+listbox row:hover {
+  background: #2B1455;
+  border-color: #7C3AED;
+}
+
+/* Frames */
+frame {
+  border-color: #3A2070;
+  border-radius: 8px;
+}
+
+frame > border {
+  border: 1px solid #3A2070;
+  border-radius: 8px;
+}
+/* Botões planos (ícones) */
+button.flat {
+  background: transparent;
+  border: none;
+  color: #E8E0F8;
+  border-radius: 6px;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+}
+
+button.flat:hover {
+  background: rgba(124, 58, 237, 0.25);
+}
+
+/* Toggle Button do Painel IA */
+togglebutton.flat:checked {
+  background: rgba(124, 58, 237, 0.4);
+}
+
+/* Frames do Painel IA */
+frame {
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+frame > label {
+  color: #C4B5F5;
+  font-weight: 600;
+}
+
+frame > border {
+  border: 1px solid #3A2070;
+  border-radius: 8px;
+}
+
+/* Escala de tempo */
+scale {
+  min-height: 24px;
+}
+
+scale highlight {
+  background: #7C3AED;
+}
+
+scale trough {
+  background: #2B1455;
+  border-radius: 4px;
+}
+
+/* Separador */
+separator {
+  background: #3A2070;
+}
+
+/* Botões dentro do painel IA */
+frame button {
+  background: #2B1455;
+  border-radius: 6px;
+  color: #E8E0F8;
+}
+
+frame button:hover {
+  background: #4A1F8C;
+}
+
+/* Barra de Menu */
+menubar {
+  background: #1A102E;
+  border-bottom: 1px solid #3A2070;
+  padding: 2px 8px;
+}
+
+menuitem {
+  color: #E8E0F8;
+}
+
+menuitem:hover {
+  background: #7C3AED;
+}
+
+/* Toolbar */
+.toolbar-bg {
+  background: #120B24;
+  border-bottom: 1px solid #2B1455;
+}
+
+toolbar separator,
+#toolbar separator {
+  background: #3A2070;
+  margin: 0 4px;
+}
+
+/* Barra de Status */
+#barra_status {
+  background: #0F0A1E;
+  border-top: 1px solid #2B1455;
+}
+
+/* Barra de Menu */
+.menubar-bg {
+  background: #1A102E;
+  border-bottom: 1px solid #3A2070;
+}
+
+menubutton {
+  color: #E8E0F8;
+}
+
+menubutton:hover {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+/* Toolbar */
+.toolbar-bg {
+  background: #120B24;
+  border-bottom: 1px solid #2B1455;
+}
+
+#toolbar separator {
+  background: #3A2070;
+  margin: 0 4px;
+}
+
+/* Barra de Status */
+#barra_status {
+  background: #0F0A1E;
+  border-top: 1px solid #2B1455;
+}
+
+/* ===== LINHA DO TEMPO ===== */
+
+/* Régua de tempo */
+.timeline-ruler {
+  background: linear-gradient(to bottom, #1E1B33, #161229);
+  border: 1px solid #4B2E83;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Container das trilhas */
+.timeline-tracks-container {
+  background: #161229;
+  border: 1px solid #4B2E83;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+/* Linha de cada trilha */
+.track-row {
+  background: #1E1B33;
+  border-radius: 4px;
+  border-bottom: 1px solid #2D2654;
+}
+
+.track-row:hover {
+  background: #252044;
+}
+
+/* Rótulo da trilha */
+.track-label {
+  color: #D4C8FF;
+  font-weight: 600;
+  background: #2D2654;
+  border-radius: 4px;
+  padding: 6px 4px;
+}
+
+/* Área de clipes */
+.track-area {
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+/* Trilha de vídeo */
+.track-video {
+  background: linear-gradient(to bottom, #2B2352, #231C42);
+  border-color: #7C3AED44;
+}
+
+.track-video:hover {
+  border-color: #7C3AED;
+  background: linear-gradient(to bottom, #342A63, #2A2150);
+}
+
+/* Trilha de áudio */
+.track-audio {
+  background: linear-gradient(to bottom, #233554, #1C2A42);
+  border-color: #3A92ED44;
+}
+
+.track-audio:hover {
+  border-color: #3A92ED;
+  background: linear-gradient(to bottom, #2A4066, #223552);
+}
+
+/* Trilha de legendas */
+.track-subtitle {
+  background: linear-gradient(to bottom, #352352, #2C1C42);
+  border-color: #C03AED44;
+}
+
+.track-subtitle:hover {
+  border-color: #C03AED;
+  background: linear-gradient(to bottom, #422A66, #362152);
+}
